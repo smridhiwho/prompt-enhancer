@@ -190,7 +190,7 @@ with st.sidebar:
             <h3>Want More Enhancements?</h3>
             <p>Get unlimited daily enhancements by supporting the project!</p>
             <a href="https://www.buymeacoffee.com/yourusername" target="_blank" style="color: white; text-decoration: none; font-weight: bold;">
-                ☕ Buy Me a Coffee
+                ☕DM here
             </a>
         </div>
     """, unsafe_allow_html=True)
@@ -223,8 +223,8 @@ with col1:
             st.markdown("""
                 <div class="premium-box">
                     <p>Get unlimited daily enhancements by supporting the project!</p>
-                    <a href="https://www.buymeacoffee.com/yourusername" target="_blank" style="color: white; text-decoration: none; font-weight: bold;">
-                        ☕ Buy Me a Coffee
+                    <a href="https://www.instagram.com/rethinkgenai/" target="_blank" style="color: white; text-decoration: none; font-weight: bold;">
+                        ☕ DM here
                     </a>
                 </div>
             """, unsafe_allow_html=True)
