@@ -7,6 +7,15 @@ from datetime import datetime, timedelta
 # Load environment variables
 load_dotenv()
 # Inject Google AdSense script into the page
+
+# Configure the page
+st.set_page_config(
+    page_title="Prompt Enhancer",
+    page_icon="✨",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
 adsense_code = """
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3575681239429167"
      crossorigin="anonymous"></script>
@@ -23,14 +32,6 @@ st.markdown("""
         (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
 """, unsafe_allow_html=True)
-
-# Configure the page
-st.set_page_config(
-    page_title="Prompt Enhancer",
-    page_icon="✨",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
 
 # Custom CSS with modern styling
 st.markdown("""
