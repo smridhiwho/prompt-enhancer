@@ -27,10 +27,7 @@ wheels/
 # Virtual Environment
 venv/
 ENV/
-
-# Database
-*.db
-*.sqlite3
+.venv/
 
 # IDE
 .idea/

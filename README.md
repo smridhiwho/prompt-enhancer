@@ -1,146 +1,90 @@
-# Prompt Enhancer Pro
+# Prompt Enhancer
 
-A Streamlit application that enhances user prompts using AI and prompt engineering best practices. Each user is allowed to enhance their prompts twice.
+A Streamlit application that enhances your prompts using the Google Gemini API and advanced prompt engineering techniques.
 
 ## Features
 
-- AI-powered prompt enhancement
-- Two enhancements per user
-- Google Ads integration
-- User usage tracking
-- Modern, responsive UI
+- Clean and intuitive user interface
+- One free enhancement per day
+- Advanced prompt engineering techniques
+- Real-time prompt enhancement
+- No login required
+- Powered by Google's Gemini 1.5 Pro model
+- Support the project for unlimited daily enhancements
 
-## Local Setup
+## Setup
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd prompt-enhancer
-```
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/prompt-enhancer.git
+   cd prompt-enhancer
+   ```
 
-2. Create a virtual environment and activate it:
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
+2. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-3. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-4. Set up environment variables:
-   - Copy `.env.example` to `.env`
-   - Add your Google Ads client ID
-
-5. Run the application:
-```bash
-streamlit run main.py
-```
-
-## Deployment
-
-### Option 1: Streamlit Community Cloud (Recommended)
-
-1. Create a GitHub repository and push your code:
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin <your-github-repo-url>
-git push -u origin main
-```
-
-2. Go to [share.streamlit.io](https://share.streamlit.io/) and sign in with your GitHub account
-
-3. Click "New app" and select your repository
-
-4. Set up your environment variables in Streamlit Cloud:
-   - Go to your app's settings
-   - Add the following secrets:
-     ```toml
-     DEEPSEEK_API_KEY = "your-deepseek-api-key"
-     HUGGINGFACE_API_KEY = "your-huggingface-api-key"
-     GOOGLE_ADS_CLIENT_ID = "your-google-ads-client-id"
+3. Set up your environment variables:
+   - Copy the example environment file:
+     ```bash
+     cp .env.example .env
      ```
+   - Edit the `.env` file and add your Google API key:
+     ```
+     GEMINI_API_KEY=your_api_key_here
+     ```
+   - You can get an API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
 
-5. Deploy your app!
+## Running the Application
 
-### Option 2: Heroku
-
-1. Create a `Procfile`:
-```
-web: streamlit run main.py
-```
-
-2. Create a `runtime.txt`:
-```
-python-3.9.18
-```
-
-3. Deploy using Heroku CLI:
+To run the application, execute:
 ```bash
-heroku create your-app-name
-git push heroku main
+streamlit run app.py
 ```
 
-4. Set up environment variables in Heroku:
-```bash
-heroku config:set DEEPSEEK_API_KEY=your-deepseek-api-key
-heroku config:set HUGGINGFACE_API_KEY=your-huggingface-api-key
-heroku config:set GOOGLE_ADS_CLIENT_ID=your-google-ads-client-id
-```
-
-### Option 3: Docker
-
-1. Create a `Dockerfile`:
-```dockerfile
-FROM python:3.9-slim
-
-WORKDIR /app
-
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-
-COPY . .
-
-EXPOSE 8501
-
-HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
-
-ENTRYPOINT ["streamlit", "run", "main.py", "--server.port=8501", "--server.address=0.0.0.0"]
-```
-
-2. Build and run:
-```bash
-docker build -t prompt-enhancer .
-docker run -p 8501:8501 prompt-enhancer
-```
-
-## Environment Variables
-
-- `DEEPSEEK_API_KEY`: Your Deepseek API key
-- `HUGGINGFACE_API_KEY`: Your HuggingFace API key
-- `GOOGLE_ADS_CLIENT_ID`: Your Google Ads client ID
+The application will open in your default web browser.
 
 ## Usage
 
-1. Enter your prompt in the text area
-2. Click "Enhance Prompt"
-3. Each user is allowed to enhance their prompts twice
-4. The remaining number of enhancements will be displayed after each use
+1. Enter your prompt in the left text area
+2. Click the "Enhance Prompt" button
+3. View your enhanced prompt in the right text area
+4. Note: Free users are limited to one enhancement per day
 
-## Monetization
+## Premium Features
 
-The application is monetized through:
-- Google Ads integration
-- Premium features (coming soon)
+Want unlimited daily enhancements? Support the project by buying me a coffee! Your support helps maintain and improve the application.
+
+[Buy Me a Coffee](https://www.buymeacoffee.com/yourusername)
+
+## Development
+
+### Project Structure
+```
+prompt-enhancer/
+├── app.py              # Main Streamlit application
+├── requirements.txt    # Python dependencies
+├── .env.example       # Environment variables template
+├── .gitignore         # Git ignore rules
+└── README.md          # Project documentation
+```
+
+### Environment Variables
+- `GEMINI_API_KEY`: Your Google Gemini API key (required)
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Note
+
+You'll need to obtain a Google API key to use this application. The API key should be kept secure and never shared publicly. The free tier of Google's API has generous limits for personal use. 
