@@ -6,6 +6,23 @@ from datetime import datetime, timedelta
 
 # Load environment variables
 load_dotenv()
+# Inject Google AdSense script into the page
+adsense_code = """
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3575681239429167"
+     crossorigin="anonymous"></script>
+"""
+
+st.markdown("""
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-3575681239429167"
+        data-ad-slot="YOUR_AD_SLOT"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+""", unsafe_allow_html=True)
 
 # Configure the page
 st.set_page_config(
@@ -259,7 +276,7 @@ st.markdown("""
     <div class="footer">
         <p>Made with ❤️ for the community</p>
         <p>Free users are limited to one enhancement per day.</p>
-        <p>Want more? Drop a DM at <a href="https://www.instagram.com/rethinkgenai/" target="_blank">Support the project</a> for unlimited enhancements!</p>
+        <p>Want more? Drop a DM at <a href="https://www.instagram.com/rethinkgenai/" target="_blank">@rethinkgenai</a> for unlimited enhancements!</p>
         <p style="font-size: 0.8rem; color: #666;">Version 1.0.0</p>
     </div>
 """, unsafe_allow_html=True) 
